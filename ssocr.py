@@ -41,7 +41,7 @@ def load_image(path, show=False):
     # crop_x0 = 0 if w <= crop_x0_init else crop_x0_init
     # crop_x1 = w if w <= crop_x1_init else crop_x1_init
     # gray_img = gray_img[crop_y0:crop_y1, crop_x0:crop_x1]
-    blurred = cv2.GaussianBlur(gray_img, (7, 7), 0)
+    blurred = 255 - cv2.GaussianBlur(gray_img, (7, 7), 0)
     if show:
         cv2.imshow('gray_img', gray_img)
         cv2.imshow('blurred_img', blurred)
